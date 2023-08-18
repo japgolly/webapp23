@@ -60,12 +60,7 @@ export default async function Index() {
                 <LogoutButton />
               </div>
             ) : (
-              <Link
-                href="/login"
-                className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-              >
-                Login
-              </Link>
+              <Oauth2 />
             )}
           </div>
         </div>
@@ -85,7 +80,6 @@ export default async function Index() {
             The fastest way to start building apps with{' '}
             <strong>Supabase</strong> and <strong>Next.js</strong>
             <br/>
-            <Oauth2 />
             <Oauth />
           </p>
           <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">

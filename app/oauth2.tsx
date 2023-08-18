@@ -14,7 +14,8 @@ export default function Oauth2() {
     console.log("DATA: ", JSON.stringify(data))
     console.log("ERROR: ", error)
   }
-  return (<div style={{background: "red"}}>
-    <button onClick={onClick}>LOGIN VIA GITHUB</button>
-  </div>)
+  return <button
+    className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+    onClick={onClick}
+    >LOGIN VIA GITHUB</button>
 }
