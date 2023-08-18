@@ -7,6 +7,7 @@
   1. Create new github app
     * url = http://localhost:3000
     * callback url = http://localhost:54321/auth/v1/callback
+  1. Goto Permissions & Events > Account Permissions > Email addresses and set Access to Read-Only
   1. Click _Generate a new client secret_
   1. Create `supabase/.env` like this
       ```

@@ -6,18 +6,12 @@ import type { NextRequest } from 'next/server'
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
 
-  try {
+  // Create a Supabase client configured to use cookies
+  const supabase = createMiddlewareClient({ req, res })
 
-    // Create a Supabase client configured to use cookies
-    const supabase = createMiddlewareClient({ req, res })
+  // Refresh session if expired - required for Server Components
+  // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  await supabase.auth.getSession()
 
-    // Refresh session if expired - required for Server Components
-    // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
-    await supabase.auth.getSession()
-
-    return res
-  } catch (e) {
-    console.error("MIDDLEWARE ERROR: ", e)
-    throw e
-  }
+  return res
 }
