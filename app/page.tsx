@@ -5,6 +5,9 @@ import LogoutButton from '../components/LogoutButton'
 import SupabaseLogo from '../components/SupabaseLogo'
 import NextJsLogo from '../components/NextJsLogo'
 
+import Oauth from './oauth'
+import Oauth2 from './oauth2'
+
 export const dynamic = 'force-dynamic'
 
 const resources = [
@@ -81,6 +84,9 @@ export default async function Index() {
           <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12">
             The fastest way to start building apps with{' '}
             <strong>Supabase</strong> and <strong>Next.js</strong>
+            <br/>
+            <Oauth2 />
+            <Oauth />
           </p>
           <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
             Get started by editing <strong>app/page.tsx</strong>
